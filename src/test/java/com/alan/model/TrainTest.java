@@ -16,6 +16,6 @@ class TrainTest {
         train.insertVehicle(new Car("BMW", "M8", new GasEngine()));
         train.insertVehicle(new Car("BMW", "M8", new GasEngine()));
 
-        assertFalse(train.insertVehicle(new Car("BMW", "M8", new GasEngine())));
+        assertFalse(train.insertVehicle(new Car("Final BMW", "M8", new GasEngine())));
     }
 }
