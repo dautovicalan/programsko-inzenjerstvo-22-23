@@ -38,7 +38,7 @@ public final class  Terminal implements Repository{
 
     @Override
     public void insertVehicle(Vehicle vehicle) {
-        System.out.println("Welcome to terminal. Vehicle fuel staatus: " + vehicle.getEngine().showCapacity());
+        System.out.println("Welcome to terminal.  Vehicle fuel staatus: " + vehicle.getEngine().showCapacity());
         TrainManager.getInstance().insertVehicleInTrain(vehicle);
     }
 }

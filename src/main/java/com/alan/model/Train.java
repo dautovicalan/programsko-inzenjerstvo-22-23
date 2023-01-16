@@ -15,12 +15,13 @@ public class Train {
         arrayOfVehicles = new ArrayList<>();
     }
 
-    public void insertVehicle(Vehicle vehicle) {
+    public boolean insertVehicle(Vehicle vehicle) {
         if (arrayOfVehicles.size() >= vehicleCapacity.capacity ){
             System.out.println("Vlak je pun. Nemoze vise");
-            return;
+            return false;
         }
         arrayOfVehicles.add(vehicle);
+        return true;
     }
 
     public String getName() {
