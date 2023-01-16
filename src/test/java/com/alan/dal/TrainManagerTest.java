@@ -38,6 +38,7 @@ class TrainManagerTest {
 
     @Test
     void shouldCorrectlyInsertTruckToDesiredTrain() {
+
         TerminalFactory.getTerminal()
                 .insertVehicle(
                         new Truck("BMW", "M8", new GasEngine())
