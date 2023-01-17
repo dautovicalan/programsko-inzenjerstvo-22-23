@@ -8,7 +8,7 @@ class TicketManagerTest {
 
     @Test
     void shouldReturnFullyInitializableTicketManagerObject(){
-        assertTrue(TicketManager.getInstance() != null);
+        assertNotNull(TicketManager.getInstance());
     }
     @Test
     void shouldCorrectlyAddHundredIncome(){
