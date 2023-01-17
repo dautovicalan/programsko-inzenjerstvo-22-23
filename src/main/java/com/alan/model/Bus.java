@@ -1,6 +1,6 @@
 package com.alan.model;
 
-public class Bus extends Vehicle{
+public class Bus extends BigVehicle{
     public Bus(String manufacturer, String model, Engine engine) {
         super(manufacturer, model, engine);
     }

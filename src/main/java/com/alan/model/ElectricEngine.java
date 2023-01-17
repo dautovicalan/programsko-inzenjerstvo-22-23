@@ -5,6 +5,11 @@ import java.util.Random;
 public class ElectricEngine implements Engine{
 
     private final int upperBound = 101;
+    private int randomCapacity;
+
+    public ElectricEngine() {
+        this.randomCapacity = new Random().nextInt(upperBound);
+    }
 
     @Override
     public void start() {
@@ -18,6 +23,6 @@ public class ElectricEngine implements Engine{
 
     @Override
     public int showCapacity() {
-        return new Random().nextInt(upperBound);
+        return randomCapacity;
     }
 }

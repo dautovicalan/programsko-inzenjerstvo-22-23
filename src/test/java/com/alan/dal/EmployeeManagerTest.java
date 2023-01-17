@@ -10,10 +10,10 @@ class EmployeeManagerTest {
     @Test
     void shouldReturnFullyInitializableEmployeeObject() {
         Employee randomEmployee = EmployeeManager.getInstance().getRandomEmployee();
-        assertTrue(randomEmployee != null);
+        assertNotNull(randomEmployee);
     }
     @Test
     void shouldReturnFullyInitializableEmployeeManagerObject() {
-        assertTrue(EmployeeManager.getInstance() != null);
+        assertNotNull(EmployeeManager.getInstance());
     }
 }

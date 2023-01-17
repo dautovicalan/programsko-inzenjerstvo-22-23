@@ -3,26 +3,22 @@ package com.alan.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Train {
+public abstract class Train {
 
-    private String name;
-    private TrainCapacity vehicleCapacity;
-    private List<Vehicle> arrayOfVehicles;
+    protected String name;
+    protected TrainCapacity vehicleCapacity;
+    protected List<Vehicle> arrayOfVehicles;
 
-    public Train(String name, TrainCapacity vehicleCapacity) {
+    public List<Vehicle> getArrayOfVehicles() {
+        return new ArrayList<>(arrayOfVehicles);
+    }
+
+    public Train(String name) {
         this.name = name;
-        this.vehicleCapacity = vehicleCapacity;
         arrayOfVehicles = new ArrayList<>();
     }
 
-    public boolean insertVehicle(Vehicle vehicle) {
-        if (arrayOfVehicles.size() >= vehicleCapacity.capacity ){
-            System.out.println("Vlak je pun. Nemoze vise");
-            return false;
-        }
-        arrayOfVehicles.add(vehicle);
-        return true;
-    }
+    public abstract boolean insertVehicle(Vehicle vehicle);
 
     public String getName() {
         return name;

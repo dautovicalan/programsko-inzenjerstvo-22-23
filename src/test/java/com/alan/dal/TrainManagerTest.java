@@ -9,39 +9,42 @@ class TrainManagerTest {
 
     @Test
     void shouldReturnFullyInitializableTrainManagerObject() {
-        assertTrue(TrainManager.getInstance() != null);
+        assertNotNull(TrainManager.getInstance());
     }
 
     @Test
     void shouldCorrectlyInsertCarToDesiredTrain() {
-        TerminalFactory.getTerminal()
-                .insertVehicle(
-                        new Car("BMW", "M8", new GasEngine())
-                );
+        TrainManager instance = TrainManager.getInstance();
+        instance.insertVehicleInTrain(
+                new Car("Bus", "Bus", new GasEngine())
+        );
+        assertEquals(1,instance.getSmallTrain().getArrayOfVehicles().size());
     }
 
     @Test
     void shouldCorrectlyInsertVanToDesiredTrain() {
-        TerminalFactory.getTerminal()
-                .insertVehicle(
-                        new Van("BMW", "M8", new GasEngine())
+        TrainManager instance = TrainManager.getInstance();
+        instance.insertVehicleInTrain(
+                        new Van("Volkswagen", "Caddy", new GasEngine())
                 );
+        assertEquals(1,instance.getSmallTrain().getArrayOfVehicles().size());
     }
 
     @Test
     void shouldCorrectlyInsertBusToDesiredTrain() {
-        TerminalFactory.getTerminal()
-                .insertVehicle(
-                        new Bus("BMW", "M8", new GasEngine())
-                );
+        TrainManager instance = TrainManager.getInstance();
+        instance.insertVehicleInTrain(
+                new Bus("Bus", "Bus", new GasEngine())
+        );
+        assertEquals(1,instance.getBigTrain().getArrayOfVehicles().size());
     }
 
     @Test
     void shouldCorrectlyInsertTruckToDesiredTrain() {
-        TerminalFactory.getTerminal()
-                .insertVehicle(
-                        new Truck("BMW", "M8", new GasEngine())
-                );
+        TrainManager instance = TrainManager.getInstance();
+        instance.insertVehicleInTrain(
+                new Truck("Bus", "Bus", new GasEngine())
+        );
+        assertEquals(1,instance.getBigTrain().getArrayOfVehicles().size());
     }
-
 }
