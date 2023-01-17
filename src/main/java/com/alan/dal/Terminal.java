@@ -2,12 +2,11 @@ package com.alan.dal;
 
 import com.alan.model.Vehicle;
 
-public final class  Terminal implements Repository{
+public final class Terminal implements Repository{
 
     private static Terminal instance;
 
-    private Terminal(){
-
+    private Terminal() {
     }
 
     public static Terminal getInstance(){
@@ -38,7 +37,9 @@ public final class  Terminal implements Repository{
 
     @Override
     public void insertVehicle(Vehicle vehicle) {
-        System.out.println("Welcome to terminal.  Vehicle fuel staatus: " + vehicle.getEngine().showCapacity());
-        TrainManager.getInstance().insertVehicleInTrain(vehicle);
+        System.out.println("Welcome to terminal. Vehicle fuel staatus: " + vehicle.getEngine().showCapacity());
+        TrainManager.
+                getInstance()
+                .insertVehicleInTrain(vehicle);
     }
 }
