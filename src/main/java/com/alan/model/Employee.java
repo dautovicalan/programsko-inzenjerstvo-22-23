@@ -25,12 +25,10 @@ public class Employee {
         return fullName;
     }
 
-    public double getPercentageCut() {
-        return percentageCut;
-    }
-
-    public void fillVehicle(Vehicle vehicle) {
-        System.out.println("Otiso sam na pumpu i natocijo malo ovo prijevozno sredstvno " +
-                vehicle.toString());
+    public void checkFuelStatus(Vehicle vehicle) {
+        if (vehicle.getEngine().showCapacity() < 10){
+            System.out.println("Otiso sam na pumpu i natocijo malo ovo prijevozno sredstvno " +
+                    vehicle);
+        }
     }
 }

@@ -6,9 +6,18 @@ public final class TrainManager {
     private static TrainManager instance;
     private Train smallTrain;
     private Train bigTrain;
+
+    public Train getSmallTrain() {
+        return smallTrain;
+    }
+
+    public Train getBigTrain() {
+        return bigTrain;
+    }
+
     private TrainManager(){
-        smallTrain = new Train("Mali vlakic", TrainCapacity.SMALL_TRAIN);
-        bigTrain = new Train("Velik vlakic", TrainCapacity.BIG_TRAIN);
+        smallTrain = new SmallTransportTrain("Mali vlakic");
+        bigTrain = new BigTransportTrain("Velik vlakic");
     }
     public static TrainManager getInstance(){
         if (instance == null){
@@ -18,20 +27,14 @@ public final class TrainManager {
     }
 
     public void insertVehicleInTrain(Vehicle vehicle) {
-        Employee employee = EmployeeManager.getInstance().getRandomEmployee();
-        if (vehicle.getEngine().showCapacity() < 10){
-            employee.fillVehicle(vehicle);
-        }
-        if (vehicle instanceof Car){
+        EmployeeManager
+                .getInstance()
+                .getRandomEmployee()
+                .checkFuelStatus(vehicle);
+        if (vehicle instanceof SmallVehicle){
             smallTrain.insertVehicle(vehicle);
         }
-        if (vehicle instanceof Van){
-            smallTrain.insertVehicle(vehicle);
-        }
-        if (vehicle instanceof Bus){
-            bigTrain.insertVehicle(vehicle);
-        }
-        if (vehicle instanceof Bus){
+        if (vehicle instanceof BigVehicle){
             bigTrain.insertVehicle(vehicle);
         }
         TicketManager
